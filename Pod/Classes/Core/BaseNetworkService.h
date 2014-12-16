@@ -11,9 +11,6 @@
 #import "MeileleHttpRequestSerializer.h"
 #import "MeileleJSONResponseSerializer.h"
 
-// Error hint String in successblock
-#define ResponseDataErrorString @"json serialization failed"
-
 // default open cache
 #define Open_Request_Cache 1
 
