@@ -32,7 +32,6 @@ rac.source_files = 'Pod/Classes/RAC/*.{h,m}'
 rac.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) MNS_RAC=1' }
 rac.dependency 'MeileleNetworkSupport/Core'
 rac.dependency 'ReactiveCocoa', '~> 2.3.1'
-rac.dependency 'AFNetworking', '~> 2.4.1'
 rac.dependency 'AFNetworking-RACExtensions', '~> 0.1.4'
 end
 
@@ -40,7 +39,6 @@ s.subspec 'Logger' do |log|
 log.source_files = 'Pod/Classes/Logger/*.{h,m}'
 log.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) MNS_LOG=1' }
 log.dependency 'MeileleNetworkSupport/Core'
-log.dependency 'AFNetworking', '~> 2.4.1'
 log.dependency 'AFNetworkActivityLogger', '~> 2.0.3'
 end
 
