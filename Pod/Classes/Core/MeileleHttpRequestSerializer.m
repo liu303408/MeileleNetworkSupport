@@ -3,15 +3,14 @@
 //  MLLNetWorkService
 //
 //  Created by chester on 7/31/14.
-//  Copyright (c) 2014 chesterlee. All rights reserved.
+//  Copyright (c) 2014 Meilele iOS Dev Team. All rights reserved.
 //
 
 #import "MeileleHttpRequestSerializer.h"
 
 @implementation MeileleHttpRequestSerializer
 
-- (id)init
-{
+- (id)init {
     self = [super init];
     
     if (self) {
@@ -22,10 +21,8 @@
     return self;
 }
 
-- (NSMutableURLRequest *)requestWithMethod:(NSString *)method URLString:(NSString *)URLString parameters:(NSDictionary *)parameters error:(NSError *__autoreleasing *)error
-{
-    if (!URLString)
-    {
+- (NSMutableURLRequest *)requestWithMethod:(NSString *)method URLString:(NSString *)URLString parameters:(NSDictionary *)parameters error:(NSError *__autoreleasing *)error {
+    if (!URLString) {
         NSLog(@"=========MLL ERROR IN Build Request!===== in %s",__FUNCTION__);
         return nil;
     }

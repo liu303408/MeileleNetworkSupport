@@ -3,7 +3,7 @@
 //  MLLNetWorkService
 //
 //  Created by chester on 7/31/14.
-//  Copyright (c) 2014 chesterlee. All rights reserved.
+//  Copyright (c) 2014 Meilele iOS Dev Team. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,14 +11,12 @@
 #import "MeileleHttpRequestSerializer.h"
 #import "MeileleJSONResponseSerializer.h"
 
-// Switcher of Debug Http log
-//#define DebugHttpLog
-#undef DebugHttpLog
-
 // Error hint String in successblock
 #define ResponseDataErrorString @"json serialization failed"
 
+// default open cache
 #define Open_Request_Cache 1
+
 /**
  *  Base networking frame work
  */
