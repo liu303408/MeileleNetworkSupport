@@ -1,0 +1,19 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'MeileleNetworkSupport Example' do
+pod 'AFNetworking', '~> 2.4.1'
+pod 'AFNetworkActivityLogger', '~> 2.0.3'
+pod 'ReactiveCocoa', '~> 2.3.1'
+pod 'AFNetworking-RACExtensions', '~> 0.1.4'
+end
+
+target 'MeileleNetworkSupport ExampleTests' do
+pod 'AFNetworking', '~> 2.4.1'
+pod 'AFNetworkActivityLogger', '~> 2.0.3'
+pod 'ReactiveCocoa', '~> 2.3.1'
+pod 'AFNetworking-RACExtensions', '~> 0.1.4'
+end
+

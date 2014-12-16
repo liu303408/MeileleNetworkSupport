@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		948B12DA7E6555FA03749C20 /* libPods-MeileleNetworkSupport Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C7D50D9BB61C283A42153B /* libPods-MeileleNetworkSupport Example.a */; };
+		D2F67C777667BA42BC6B30C2 /* libPods-MeileleNetworkSupport ExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6DC4125EFF009AD994E496 /* libPods-MeileleNetworkSupport ExampleTests.a */; };
+		E64120631A134CAB006A632A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E64120621A134CAB006A632A /* main.m */; };
+		E64120661A134CAB006A632A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E64120651A134CAB006A632A /* AppDelegate.m */; };
+		E64120691A134CAB006A632A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E64120681A134CAB006A632A /* ViewController.m */; };
+		E641206C1A134CAB006A632A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E641206A1A134CAB006A632A /* Main.storyboard */; };
+		E641206E1A134CAB006A632A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E641206D1A134CAB006A632A /* Images.xcassets */; };
+		E64120711A134CAB006A632A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E641206F1A134CAB006A632A /* LaunchScreen.xib */; };
+		E641207D1A134CAB006A632A /* MeileleNetworkSupport_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E641207C1A134CAB006A632A /* MeileleNetworkSupport_ExampleTests.m */; };
+		E6D6BDD71A14436900E2D368 /* BaseNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D6BDCD1A14436900E2D368 /* BaseNetworkService.m */; };
+		E6D6BDD81A14436900E2D368 /* MeileleCustomURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D6BDCF1A14436900E2D368 /* MeileleCustomURLCache.m */; };
+		E6D6BDD91A14436900E2D368 /* MeileleHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D6BDD11A14436900E2D368 /* MeileleHttpRequestSerializer.m */; };
+		E6D6BDDA1A14436900E2D368 /* MeileleJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D6BDD31A14436900E2D368 /* MeileleJSONResponseSerializer.m */; };
+		E6D6BDDB1A14436900E2D368 /* BaseNetworkService+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D6BDD61A14436900E2D368 /* BaseNetworkService+RACSupport.m */; };
+		E6D6BDE01A14466600E2D368 /* MNSActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D6BDDF1A14466600E2D368 /* MNSActivityLogger.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E64120771A134CAB006A632A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E64120551A134CAB006A632A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E641205C1A134CAB006A632A;
+			remoteInfo = "MeileleNetworkSupport Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2979E30269BC336F486C996D /* Pods-MeileleNetworkSupport ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeileleNetworkSupport ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeileleNetworkSupport ExampleTests/Pods-MeileleNetworkSupport ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4290E423678BD08CA171D615 /* Pods-MeileleNetworkSupport Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeileleNetworkSupport Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeileleNetworkSupport Example/Pods-MeileleNetworkSupport Example.debug.xcconfig"; sourceTree = "<group>"; };
+		A82D377BFFF81059338C1BD0 /* Pods-MeileleNetworkSupport ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeileleNetworkSupport ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeileleNetworkSupport ExampleTests/Pods-MeileleNetworkSupport ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		E641205D1A134CAB006A632A /* MeileleNetworkSupport Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeileleNetworkSupport Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E64120611A134CAB006A632A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E64120621A134CAB006A632A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E64120641A134CAB006A632A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E64120651A134CAB006A632A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E64120671A134CAB006A632A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E64120681A134CAB006A632A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E641206B1A134CAB006A632A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E641206D1A134CAB006A632A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E64120701A134CAB006A632A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E64120761A134CAB006A632A /* MeileleNetworkSupport ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MeileleNetworkSupport ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E641207B1A134CAB006A632A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E641207C1A134CAB006A632A /* MeileleNetworkSupport_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeileleNetworkSupport_ExampleTests.m; sourceTree = "<group>"; };
+		E64120A41A135AD3006A632A /* MeileleNetworkSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeileleNetworkSupport.h; sourceTree = "<group>"; };
+		E6D6BDCC1A14436900E2D368 /* BaseNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNetworkService.h; sourceTree = "<group>"; };
+		E6D6BDCD1A14436900E2D368 /* BaseNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNetworkService.m; sourceTree = "<group>"; };
+		E6D6BDCE1A14436900E2D368 /* MeileleCustomURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeileleCustomURLCache.h; sourceTree = "<group>"; };
+		E6D6BDCF1A14436900E2D368 /* MeileleCustomURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeileleCustomURLCache.m; sourceTree = "<group>"; };
+		E6D6BDD01A14436900E2D368 /* MeileleHttpRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeileleHttpRequestSerializer.h; sourceTree = "<group>"; };
+		E6D6BDD11A14436900E2D368 /* MeileleHttpRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeileleHttpRequestSerializer.m; sourceTree = "<group>"; };
+		E6D6BDD21A14436900E2D368 /* MeileleJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeileleJSONResponseSerializer.h; sourceTree = "<group>"; };
+		E6D6BDD31A14436900E2D368 /* MeileleJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeileleJSONResponseSerializer.m; sourceTree = "<group>"; };
+		E6D6BDD51A14436900E2D368 /* BaseNetworkService+RACSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseNetworkService+RACSupport.h"; sourceTree = "<group>"; };
+		E6D6BDD61A14436900E2D368 /* BaseNetworkService+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseNetworkService+RACSupport.m"; sourceTree = "<group>"; };
+		E6D6BDDE1A14466600E2D368 /* MNSActivityLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNSActivityLogger.h; sourceTree = "<group>"; };
+		E6D6BDDF1A14466600E2D368 /* MNSActivityLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNSActivityLogger.m; sourceTree = "<group>"; };
+		F4C7D50D9BB61C283A42153B /* libPods-MeileleNetworkSupport Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeileleNetworkSupport Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA6DC4125EFF009AD994E496 /* libPods-MeileleNetworkSupport ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeileleNetworkSupport ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA968723101465E9B708958 /* Pods-MeileleNetworkSupport Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeileleNetworkSupport Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeileleNetworkSupport Example/Pods-MeileleNetworkSupport Example.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E641205A1A134CAB006A632A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				948B12DA7E6555FA03749C20 /* libPods-MeileleNetworkSupport Example.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E64120731A134CAB006A632A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2F67C777667BA42BC6B30C2 /* libPods-MeileleNetworkSupport ExampleTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52FED3244B4BEA24A85E5A45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4C7D50D9BB61C283A42153B /* libPods-MeileleNetworkSupport Example.a */,
+				FA6DC4125EFF009AD994E496 /* libPods-MeileleNetworkSupport ExampleTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1DC11C9EF46D2D5BB1CAE3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4290E423678BD08CA171D615 /* Pods-MeileleNetworkSupport Example.debug.xcconfig */,
+				FCA968723101465E9B708958 /* Pods-MeileleNetworkSupport Example.release.xcconfig */,
+				2979E30269BC336F486C996D /* Pods-MeileleNetworkSupport ExampleTests.debug.xcconfig */,
+				A82D377BFFF81059338C1BD0 /* Pods-MeileleNetworkSupport ExampleTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E64120541A134CAB006A632A = {
+			isa = PBXGroup;
+			children = (
+				E641208E1A1357BE006A632A /* Classes */,
+				E641205F1A134CAB006A632A /* MeileleNetworkSupport Example */,
+				E64120791A134CAB006A632A /* MeileleNetworkSupport ExampleTests */,
+				E641205E1A134CAB006A632A /* Products */,
+				D1DC11C9EF46D2D5BB1CAE3F /* Pods */,
+				52FED3244B4BEA24A85E5A45 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E641205E1A134CAB006A632A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E641205D1A134CAB006A632A /* MeileleNetworkSupport Example.app */,
+				E64120761A134CAB006A632A /* MeileleNetworkSupport ExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E641205F1A134CAB006A632A /* MeileleNetworkSupport Example */ = {
+			isa = PBXGroup;
+			children = (
+				E64120641A134CAB006A632A /* AppDelegate.h */,
+				E64120651A134CAB006A632A /* AppDelegate.m */,
+				E64120671A134CAB006A632A /* ViewController.h */,
+				E64120681A134CAB006A632A /* ViewController.m */,
+				E641206A1A134CAB006A632A /* Main.storyboard */,
+				E641206D1A134CAB006A632A /* Images.xcassets */,
+				E641206F1A134CAB006A632A /* LaunchScreen.xib */,
+				E64120601A134CAB006A632A /* Supporting Files */,
+			);
+			path = "MeileleNetworkSupport Example";
+			sourceTree = "<group>";
+		};
+		E64120601A134CAB006A632A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E64120611A134CAB006A632A /* Info.plist */,
+				E64120621A134CAB006A632A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E64120791A134CAB006A632A /* MeileleNetworkSupport ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				E641207C1A134CAB006A632A /* MeileleNetworkSupport_ExampleTests.m */,
+				E641207A1A134CAB006A632A /* Supporting Files */,
+			);
+			path = "MeileleNetworkSupport ExampleTests";
+			sourceTree = "<group>";
+		};
+		E641207A1A134CAB006A632A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E641207B1A134CAB006A632A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E641208E1A1357BE006A632A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E6D6BDCB1A14436900E2D368 /* Core */,
+				E6D6BDD41A14436900E2D368 /* RAC */,
+				E6D6BDDD1A14464200E2D368 /* Logger */,
+				E64120A41A135AD3006A632A /* MeileleNetworkSupport.h */,
+			);
+			name = Classes;
+			path = ../Pod/Classes;
+			sourceTree = "<group>";
+		};
+		E6D6BDCB1A14436900E2D368 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E6D6BDCC1A14436900E2D368 /* BaseNetworkService.h */,
+				E6D6BDCD1A14436900E2D368 /* BaseNetworkService.m */,
+				E6D6BDCE1A14436900E2D368 /* MeileleCustomURLCache.h */,
+				E6D6BDCF1A14436900E2D368 /* MeileleCustomURLCache.m */,
+				E6D6BDD01A14436900E2D368 /* MeileleHttpRequestSerializer.h */,
+				E6D6BDD11A14436900E2D368 /* MeileleHttpRequestSerializer.m */,
+				E6D6BDD21A14436900E2D368 /* MeileleJSONResponseSerializer.h */,
+				E6D6BDD31A14436900E2D368 /* MeileleJSONResponseSerializer.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E6D6BDD41A14436900E2D368 /* RAC */ = {
+			isa = PBXGroup;
+			children = (
+				E6D6BDD51A14436900E2D368 /* BaseNetworkService+RACSupport.h */,
+				E6D6BDD61A14436900E2D368 /* BaseNetworkService+RACSupport.m */,
+			);
+			path = RAC;
+			sourceTree = "<group>";
+		};
+		E6D6BDDD1A14464200E2D368 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				E6D6BDDE1A14466600E2D368 /* MNSActivityLogger.h */,
+				E6D6BDDF1A14466600E2D368 /* MNSActivityLogger.m */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E641205C1A134CAB006A632A /* MeileleNetworkSupport Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E64120801A134CAB006A632A /* Build configuration list for PBXNativeTarget "MeileleNetworkSupport Example" */;
+			buildPhases = (
+				9EEFD98A03E10B3BF7E2C196 /* Check Pods Manifest.lock */,
+				E64120591A134CAB006A632A /* Sources */,
+				E641205A1A134CAB006A632A /* Frameworks */,
+				E641205B1A134CAB006A632A /* Resources */,
+				58D2D8896A6503707B79896D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MeileleNetworkSupport Example";
+			productName = "MeileleNetworkSupport Example";
+			productReference = E641205D1A134CAB006A632A /* MeileleNetworkSupport Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E64120751A134CAB006A632A /* MeileleNetworkSupport ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E64120831A134CAB006A632A /* Build configuration list for PBXNativeTarget "MeileleNetworkSupport ExampleTests" */;
+			buildPhases = (
+				90CE2E9F88803528B2E80269 /* Check Pods Manifest.lock */,
+				E64120721A134CAB006A632A /* Sources */,
+				E64120731A134CAB006A632A /* Frameworks */,
+				E64120741A134CAB006A632A /* Resources */,
+				BFDAB6FB5F97FA9D08FBFC3D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E64120781A134CAB006A632A /* PBXTargetDependency */,
+			);
+			name = "MeileleNetworkSupport ExampleTests";
+			productName = "MeileleNetworkSupport ExampleTests";
+			productReference = E64120761A134CAB006A632A /* MeileleNetworkSupport ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E64120551A134CAB006A632A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Meilele iOS Dev Team";
+				TargetAttributes = {
+					E641205C1A134CAB006A632A = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					E64120751A134CAB006A632A = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = E641205C1A134CAB006A632A;
+					};
+				};
+			};
+			buildConfigurationList = E64120581A134CAB006A632A /* Build configuration list for PBXProject "MeileleNetworkSupport Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E64120541A134CAB006A632A;
+			productRefGroup = E641205E1A134CAB006A632A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E641205C1A134CAB006A632A /* MeileleNetworkSupport Example */,
+				E64120751A134CAB006A632A /* MeileleNetworkSupport ExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E641205B1A134CAB006A632A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E641206C1A134CAB006A632A /* Main.storyboard in Resources */,
+				E64120711A134CAB006A632A /* LaunchScreen.xib in Resources */,
+				E641206E1A134CAB006A632A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E64120741A134CAB006A632A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58D2D8896A6503707B79896D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeileleNetworkSupport Example/Pods-MeileleNetworkSupport Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90CE2E9F88803528B2E80269 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9EEFD98A03E10B3BF7E2C196 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BFDAB6FB5F97FA9D08FBFC3D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeileleNetworkSupport ExampleTests/Pods-MeileleNetworkSupport ExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E64120591A134CAB006A632A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6D6BDD81A14436900E2D368 /* MeileleCustomURLCache.m in Sources */,
+				E64120691A134CAB006A632A /* ViewController.m in Sources */,
+				E6D6BDE01A14466600E2D368 /* MNSActivityLogger.m in Sources */,
+				E6D6BDD71A14436900E2D368 /* BaseNetworkService.m in Sources */,
+				E6D6BDD91A14436900E2D368 /* MeileleHttpRequestSerializer.m in Sources */,
+				E64120661A134CAB006A632A /* AppDelegate.m in Sources */,
+				E6D6BDDA1A14436900E2D368 /* MeileleJSONResponseSerializer.m in Sources */,
+				E6D6BDDB1A14436900E2D368 /* BaseNetworkService+RACSupport.m in Sources */,
+				E64120631A134CAB006A632A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E64120721A134CAB006A632A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E641207D1A134CAB006A632A /* MeileleNetworkSupport_ExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E64120781A134CAB006A632A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E641205C1A134CAB006A632A /* MeileleNetworkSupport Example */;
+			targetProxy = E64120771A134CAB006A632A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E641206A1A134CAB006A632A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E641206B1A134CAB006A632A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E641206F1A134CAB006A632A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E64120701A134CAB006A632A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E641207E1A134CAB006A632A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		E641207F1A134CAB006A632A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E64120811A134CAB006A632A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4290E423678BD08CA171D615 /* Pods-MeileleNetworkSupport Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "MeileleNetworkSupport Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E64120821A134CAB006A632A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCA968723101465E9B708958 /* Pods-MeileleNetworkSupport Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "MeileleNetworkSupport Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E64120841A134CAB006A632A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2979E30269BC336F486C996D /* Pods-MeileleNetworkSupport ExampleTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MeileleNetworkSupport ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeileleNetworkSupport Example.app/MeileleNetworkSupport Example";
+			};
+			name = Debug;
+		};
+		E64120851A134CAB006A632A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A82D377BFFF81059338C1BD0 /* Pods-MeileleNetworkSupport ExampleTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MeileleNetworkSupport ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeileleNetworkSupport Example.app/MeileleNetworkSupport Example";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E64120581A134CAB006A632A /* Build configuration list for PBXProject "MeileleNetworkSupport Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E641207E1A134CAB006A632A /* Debug */,
+				E641207F1A134CAB006A632A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E64120801A134CAB006A632A /* Build configuration list for PBXNativeTarget "MeileleNetworkSupport Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E64120811A134CAB006A632A /* Debug */,
+				E64120821A134CAB006A632A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E64120831A134CAB006A632A /* Build configuration list for PBXNativeTarget "MeileleNetworkSupport ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E64120841A134CAB006A632A /* Debug */,
+				E64120851A134CAB006A632A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E64120551A134CAB006A632A /* Project object */;
+}
