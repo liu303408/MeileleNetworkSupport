@@ -42,7 +42,12 @@
 #if Open_Request_Cache
     _operationManager.requestSerializer.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
 #endif
-    [self GET:urlString parameters:parameters hitCache:nil success:success failure:failure];
+    [self GET:urlString
+   parameters:parameters
+     hitCache:nil
+     interval:CustomURLCacheExpirationInterval
+      success:success
+      failure:failure];
 }
 
 - (void)GETWithURLString:(NSString *)urlString
@@ -50,12 +55,29 @@
                 hitCache:(void (^)(BOOL isHit))hitCache
                  success:(void (^)(id responseData))success
                  failure:(void (^)(NSString *errorString))failure {
-    {
+    [self GETWithURLString:urlString
+                  hitCache:hitCache
+                  interval:CustomURLCacheExpirationInterval
+                parameters:parameters
+                   success:success
+                   failure:failure];
+}
+
+- (void)GETWithURLString:(NSString *)urlString
+                hitCache:(void (^)(BOOL isHit))hitCache
+                interval:(NSTimeInterval)expirationInterval
+              parameters:(NSDictionary *)parameters
+                 success:(void (^)(id responseData))success
+                 failure:(void (^)(NSString *errorString))failure {
 #if Open_Request_Cache
-        _operationManager.requestSerializer.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
+    _operationManager.requestSerializer.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
 #endif
-        [self GET:urlString parameters:parameters hitCache:hitCache success:success failure:failure];
-    }
+    [self GET:urlString
+   parameters:parameters
+     hitCache:hitCache
+     interval:expirationInterval
+      success:success
+      failure:failure];
 }
 
 /**
@@ -72,14 +94,33 @@
               parameters:(NSDictionary *)parameters
                  success:(void (^)(id responseData))success
                  failure:(void (^)(NSString *errorString))failure {
+    [self GETWithURLString:urlString
+                 withCache:useCache
+                  interval:CustomURLCacheExpirationInterval
+                parameters:parameters
+                   success:success
+                   failure:failure];
+}
+
+- (void)GETWithURLString:(NSString *)urlString
+               withCache:(BOOL)useCache
+                interval:(NSTimeInterval)expirationInterval
+              parameters:(NSDictionary *)parameters
+                 success:(void (^)(id responseData))success
+                 failure:(void (^)(NSString *errorString))failure {
     if (useCache) {
         _operationManager.requestSerializer.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
     } else {
         _operationManager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
     }
-    [self GET:urlString parameters:parameters hitCache:nil success:success failure:failure];
-}
 
+    [self GET:urlString
+   parameters:parameters
+     hitCache:nil
+     interval:expirationInterval
+      success:success
+      failure:failure];
+}
 
 /**
  *  Get Method -can refresh cache
@@ -117,6 +158,7 @@
 - (void)GET:(NSString *)urlString
  parameters:(NSDictionary *)parameters
    hitCache:(void (^)(BOOL isHit))hitCache
+   interval:(NSTimeInterval)expirationInterval
     success:(void (^)(id responseData))success
     failure:(void (^)(NSString *errorString))failure {
     BOOL __block responseFromCache = YES;
@@ -137,6 +179,8 @@
                                                  URLString:urlString
                                                 parameters:parameters
                                                      error:nil];
+    [MeileleCustomURLCache setExpirationInterval:request interval:expirationInterval];
+    
     if (hitCache) {
         hitCache([[MeileleCustomURLCache shareMeileleURLCache] isHit:request]);
     }

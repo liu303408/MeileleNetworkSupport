@@ -53,7 +53,7 @@
 		E641207B1A134CAB006A632A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E641207C1A134CAB006A632A /* MeileleNetworkSupport_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeileleNetworkSupport_ExampleTests.m; sourceTree = "<group>"; };
 		E64120A41A135AD3006A632A /* MeileleNetworkSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeileleNetworkSupport.h; sourceTree = "<group>"; };
-		E661D9F71A40219900F221CE /* MeileleNetworkSupport.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MeileleNetworkSupport.podspec; path = ../../MeileleNetworkSupport.podspec; sourceTree = "<group>"; };
+		E661D9F71A40219900F221CE /* MeileleNetworkSupport.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MeileleNetworkSupport.podspec; path = ../MeileleNetworkSupport.podspec; sourceTree = "<group>"; };
 		E6D6BDCC1A14436900E2D368 /* BaseNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNetworkService.h; sourceTree = "<group>"; };
 		E6D6BDCD1A14436900E2D368 /* BaseNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNetworkService.m; sourceTree = "<group>"; };
 		E6D6BDCE1A14436900E2D368 /* MeileleCustomURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeileleCustomURLCache.h; sourceTree = "<group>"; };
@@ -114,6 +114,7 @@
 		E64120541A134CAB006A632A = {
 			isa = PBXGroup;
 			children = (
+				E661D9F71A40219900F221CE /* MeileleNetworkSupport.podspec */,
 				E641208E1A1357BE006A632A /* Classes */,
 				E641205F1A134CAB006A632A /* MeileleNetworkSupport Example */,
 				E64120791A134CAB006A632A /* MeileleNetworkSupport ExampleTests */,
@@ -150,7 +151,6 @@
 		E64120601A134CAB006A632A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E661D9F71A40219900F221CE /* MeileleNetworkSupport.podspec */,
 				E64120611A134CAB006A632A /* Info.plist */,
 				E64120621A134CAB006A632A /* main.m */,
 			);

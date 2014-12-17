@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "MeileleNetworkSupport"
-s.version          = "3.0.0"
+s.version          = "4.0.0"
 s.platform         = :ios, '6.0'
 s.license          = 'MIT'
 s.summary          = "A delightful iOS networking framework with AFNetWorking "

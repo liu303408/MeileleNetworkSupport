@@ -12,6 +12,10 @@
 
 @implementation MeileleCustomURLCache
 
++ (void)useCustomURLCache {
+    [NSURLCache setSharedURLCache:[MeileleCustomURLCache shareMeileleURLCache]];
+}
+
 + (instancetype)shareMeileleURLCache
 {
     static MeileleCustomURLCache *_standardURLCache;
@@ -29,13 +33,21 @@
     NSCachedURLResponse *cachedResponse = [super cachedResponseForRequest:request];
     if (cachedResponse) {
         NSDate *cacheData = cachedResponse.userInfo[kCustomURLCacheExpiration];
-        if ([MeileleCustomURLCache isOverdue:cacheData]) {
-            return NO;
-        } else {
+        NSString *interval = cachedResponse.userInfo[kExpirationInterval];
+        if (![self isOverdue:cacheData expirationInterval:interval.doubleValue]) {
             return YES;
         }
+    }
+    return NO;
+}
+
++ (void)setExpirationInterval:(NSMutableURLRequest *)request interval:(NSTimeInterval)expirationInterval {
+    if (expirationInterval >= 0) {
+        [request setValue:[[NSNumber numberWithDouble:expirationInterval] stringValue]
+       forHTTPHeaderField:kExpirationInterval];
     } else {
-        return NO;
+        [request setValue:[[NSNumber numberWithDouble:CustomURLCacheExpirationInterval] stringValue]
+       forHTTPHeaderField:kExpirationInterval];
     }
 }
 
@@ -45,7 +57,8 @@
     NSCachedURLResponse *cachedResponse = [super cachedResponseForRequest:request];
     if (cachedResponse) {
         NSDate *cacheData = cachedResponse.userInfo[kCustomURLCacheExpiration];
-        if ([MeileleCustomURLCache isOverdue:cacheData]) {
+        NSString *interval = cachedResponse.userInfo[kExpirationInterval];
+        if ([self isOverdue:cacheData expirationInterval:interval.doubleValue]) {
             return nil;
         }
     }
@@ -54,8 +67,7 @@
 
 - (void)storeCachedResponse:(NSCachedURLResponse *)cachedResponse forRequest:(NSURLRequest *)request
 {
-    NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:cachedResponse.userInfo];
-    userInfo[kCustomURLCacheExpiration] = [NSDate date];
+    NSMutableDictionary *userInfo = [self buildUserInfo:cachedResponse forRequest:request];
     
     NSCachedURLResponse *modifiedCachedResponse = [[NSCachedURLResponse alloc] initWithResponse:cachedResponse.response data:cachedResponse.data userInfo:userInfo storagePolicy:cachedResponse.storagePolicy];
     
@@ -63,9 +75,25 @@
 }
 
 #pragma mark - private method
-+ (BOOL)isOverdue:(NSDate *)data
+- (NSMutableDictionary *)buildUserInfo:(NSCachedURLResponse *)cachedResponse forRequest:(NSURLRequest *)request {
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:cachedResponse.userInfo];
+    userInfo[kCustomURLCacheExpiration] = [NSDate date];
+    userInfo[kExpirationInterval] = [self interval:cachedResponse forRequest:request];
+    return userInfo;
+}
+
+- (NSNumber *)interval:(NSCachedURLResponse *)cachedResponse forRequest:(NSURLRequest *)request {
+    NSString *intervalString = [request valueForHTTPHeaderField:kExpirationInterval];
+    if (intervalString) {
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        return [formatter numberFromString:intervalString];
+    }
+    return [NSNumber numberWithDouble:CustomURLCacheExpirationInterval];
+}
+
+- (BOOL)isOverdue:(NSDate *)data expirationInterval:(NSTimeInterval)expirationInterval
 {
-    NSDate *overdueData = [data dateByAddingTimeInterval:CustomURLCacheExpirationInterval];
+    NSDate *overdueData = [data dateByAddingTimeInterval:expirationInterval];
     return [overdueData compare:[NSDate date]] == NSOrderedAscending;
 }
 @end

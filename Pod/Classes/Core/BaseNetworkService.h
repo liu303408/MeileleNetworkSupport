@@ -22,7 +22,7 @@
 @property (nonatomic,readonly) AFHTTPRequestOperationManager *operationManager;
 
 /**
- *  Get Method--with cache
+ *  Get Method --with cache
  *
  *  @param urlString  url request string
  *  @param parameters parameters with dictionary type
@@ -34,11 +34,38 @@
                  success:(void (^)(id responseData))success
                  failure:(void (^)(NSString *errorString))failure;
 
+/**
+ *  Get Method --with cache
+ *
+ *  @param urlString  url request string
+ *  @param parameters parameters with dictionary type
+ *  @param hitCache   hit block
+ *  @param success    success block
+ *  @param failure    failure block
+ */
 - (void)GETWithURLString:(NSString *)urlString
               parameters:(NSDictionary *)parameters
                 hitCache:(void (^)(BOOL isHit))hitCache
                  success:(void (^)(id responseData))success
                  failure:(void (^)(NSString *errorString))failure;
+
+/**
+ *  Get Method --with cache and and set expiration interval
+ *
+ *  @param urlString          url request string
+ *  @param hitCache           hit cache block
+ *  @param expirationInterval 过期时间（秒）
+ *  @param parameters         parameters with dictionary type
+ *  @param success            success block
+ *  @param failure            failure block
+ */
+- (void)GETWithURLString:(NSString *)urlString
+                hitCache:(void (^)(BOOL isHit))hitCache
+                interval:(NSTimeInterval)expirationInterval
+              parameters:(NSDictionary *)parameters
+                 success:(void (^)(id responseData))success
+                 failure:(void (^)(NSString *errorString))failure;
+    
 /**
  *  Get Method -can close cache
  *
@@ -54,6 +81,22 @@
                  success:(void (^)(id responseData))success
                  failure:(void (^)(NSString *errorString))failure;
 
+/**
+ *  Get Method -can close cache and set expiration interval
+ *
+ *  @param urlString          url request string
+ *  @param useCache           是否使用缓存
+ *  @param expirationInterval 过期时间（秒）
+ *  @param parameters         parameters with dictionary type
+ *  @param success            success block
+ *  @param failure            failure block
+ */
+- (void)GETWithURLString:(NSString *)urlString
+               withCache:(BOOL)useCache
+                interval:(NSTimeInterval)expirationInterval
+              parameters:(NSDictionary *)parameters
+                 success:(void (^)(id responseData))success
+                 failure:(void (^)(NSString *errorString))failure;
 
 /**
  *  Get Method -can refresh cache
