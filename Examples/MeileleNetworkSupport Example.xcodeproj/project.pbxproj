@@ -15,7 +15,7 @@
 		E641206C1A134CAB006A632A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E641206A1A134CAB006A632A /* Main.storyboard */; };
 		E641206E1A134CAB006A632A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E641206D1A134CAB006A632A /* Images.xcassets */; };
 		E64120711A134CAB006A632A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E641206F1A134CAB006A632A /* LaunchScreen.xib */; };
-		E641207D1A134CAB006A632A /* MeileleNetworkSupport_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E641207C1A134CAB006A632A /* MeileleNetworkSupport_ExampleTests.m */; };
+		E658F92C1A42B6E700716BD8 /* BaseNetworkServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E658F92B1A42B6E700716BD8 /* BaseNetworkServiceTest.m */; };
 		E661D9F81A40219900F221CE /* MeileleNetworkSupport.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E661D9F71A40219900F221CE /* MeileleNetworkSupport.podspec */; };
 		E6D6BDD71A14436900E2D368 /* BaseNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D6BDCD1A14436900E2D368 /* BaseNetworkService.m */; };
 		E6D6BDD81A14436900E2D368 /* MeileleCustomURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D6BDCF1A14436900E2D368 /* MeileleCustomURLCache.m */; };
@@ -51,8 +51,8 @@
 		E64120701A134CAB006A632A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E64120761A134CAB006A632A /* MeileleNetworkSupport ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MeileleNetworkSupport ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E641207B1A134CAB006A632A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E641207C1A134CAB006A632A /* MeileleNetworkSupport_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeileleNetworkSupport_ExampleTests.m; sourceTree = "<group>"; };
 		E64120A41A135AD3006A632A /* MeileleNetworkSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeileleNetworkSupport.h; sourceTree = "<group>"; };
+		E658F92B1A42B6E700716BD8 /* BaseNetworkServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNetworkServiceTest.m; sourceTree = "<group>"; };
 		E661D9F71A40219900F221CE /* MeileleNetworkSupport.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MeileleNetworkSupport.podspec; path = ../MeileleNetworkSupport.podspec; sourceTree = "<group>"; };
 		E6D6BDCC1A14436900E2D368 /* BaseNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNetworkService.h; sourceTree = "<group>"; };
 		E6D6BDCD1A14436900E2D368 /* BaseNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNetworkService.m; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		E64120791A134CAB006A632A /* MeileleNetworkSupport ExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				E641207C1A134CAB006A632A /* MeileleNetworkSupport_ExampleTests.m */,
+				E658F92B1A42B6E700716BD8 /* BaseNetworkServiceTest.m */,
 				E641207A1A134CAB006A632A /* Supporting Files */,
 			);
 			path = "MeileleNetworkSupport ExampleTests";
@@ -403,7 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E641207D1A134CAB006A632A /* MeileleNetworkSupport_ExampleTests.m in Sources */,
+				E658F92C1A42B6E700716BD8 /* BaseNetworkServiceTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
