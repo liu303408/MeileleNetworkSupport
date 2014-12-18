@@ -35,49 +35,49 @@
 /**
  *  Get Method with cache by default
  */
-- (void)GETWithURLString:(NSString *)urlString
-              parameters:(NSDictionary *)parameters
-                 success:(void (^)(id responseData))success
-                 failure:(void (^)(NSString *errorString))failure {
+- (NSURLRequest *)GETWithURLString:(NSString *)urlString
+                        parameters:(NSDictionary *)parameters
+                           success:(void (^)(id responseData))success
+                           failure:(void (^)(NSString *errorString))failure {
 #if Open_Request_Cache
     _operationManager.requestSerializer.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
 #endif
-    [self GET:urlString
-   parameters:parameters
-     hitCache:nil
-     interval:CustomURLCacheExpirationInterval
-      success:success
-      failure:failure];
+    return [self GET:urlString
+          parameters:parameters
+            hitCache:nil
+            interval:CustomURLCacheExpirationInterval
+             success:success
+             failure:failure];
 }
 
-- (void)GETWithURLString:(NSString *)urlString
-              parameters:(NSDictionary *)parameters
-                hitCache:(void (^)(BOOL isHit))hitCache
-                 success:(void (^)(id responseData))success
-                 failure:(void (^)(NSString *errorString))failure {
-    [self GETWithURLString:urlString
-                  hitCache:hitCache
-                  interval:CustomURLCacheExpirationInterval
-                parameters:parameters
-                   success:success
-                   failure:failure];
+- (NSURLRequest *)GETWithURLString:(NSString *)urlString
+                        parameters:(NSDictionary *)parameters
+                          hitCache:(void (^)(BOOL isHit))hitCache
+                           success:(void (^)(id responseData))success
+                           failure:(void (^)(NSString *errorString))failure {
+    return [self GETWithURLString:urlString
+                         hitCache:hitCache
+                         interval:CustomURLCacheExpirationInterval
+                       parameters:parameters
+                          success:success
+                          failure:failure];
 }
 
-- (void)GETWithURLString:(NSString *)urlString
-                hitCache:(void (^)(BOOL isHit))hitCache
-                interval:(NSTimeInterval)expirationInterval
-              parameters:(NSDictionary *)parameters
-                 success:(void (^)(id responseData))success
-                 failure:(void (^)(NSString *errorString))failure {
+- (NSURLRequest *)GETWithURLString:(NSString *)urlString
+                          hitCache:(void (^)(BOOL isHit))hitCache
+                          interval:(NSTimeInterval)expirationInterval
+                        parameters:(NSDictionary *)parameters
+                           success:(void (^)(id responseData))success
+                           failure:(void (^)(NSString *errorString))failure {
 #if Open_Request_Cache
     _operationManager.requestSerializer.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
 #endif
-    [self GET:urlString
-   parameters:parameters
-     hitCache:hitCache
-     interval:expirationInterval
-      success:success
-      failure:failure];
+    return [self GET:urlString
+          parameters:parameters
+            hitCache:hitCache
+            interval:expirationInterval
+             success:success
+             failure:failure];
 }
 
 /**
@@ -89,37 +89,37 @@
  *  @param success    success block
  *  @param failure    failure block
  */
-- (void)GETWithURLString:(NSString *)urlString
-               withCache:(BOOL)useCache
-              parameters:(NSDictionary *)parameters
-                 success:(void (^)(id responseData))success
-                 failure:(void (^)(NSString *errorString))failure {
-    [self GETWithURLString:urlString
-                 withCache:useCache
-                  interval:CustomURLCacheExpirationInterval
-                parameters:parameters
-                   success:success
-                   failure:failure];
+- (NSURLRequest *)GETWithURLString:(NSString *)urlString
+                         withCache:(BOOL)useCache
+                        parameters:(NSDictionary *)parameters
+                           success:(void (^)(id responseData))success
+                           failure:(void (^)(NSString *errorString))failure {
+    return [self GETWithURLString:urlString
+                        withCache:useCache
+                         interval:CustomURLCacheExpirationInterval
+                       parameters:parameters
+                          success:success
+                          failure:failure];
 }
 
-- (void)GETWithURLString:(NSString *)urlString
-               withCache:(BOOL)useCache
-                interval:(NSTimeInterval)expirationInterval
-              parameters:(NSDictionary *)parameters
-                 success:(void (^)(id responseData))success
-                 failure:(void (^)(NSString *errorString))failure {
+- (NSURLRequest *)GETWithURLString:(NSString *)urlString
+                         withCache:(BOOL)useCache
+                          interval:(NSTimeInterval)expirationInterval
+                        parameters:(NSDictionary *)parameters
+                           success:(void (^)(id responseData))success
+                           failure:(void (^)(NSString *errorString))failure {
     if (useCache) {
         _operationManager.requestSerializer.cachePolicy = NSURLRequestReturnCacheDataElseLoad;
     } else {
         _operationManager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
     }
-
-    [self GET:urlString
-   parameters:parameters
-     hitCache:nil
-     interval:expirationInterval
-      success:success
-      failure:failure];
+    
+    return [self GET:urlString
+          parameters:parameters
+            hitCache:nil
+            interval:expirationInterval
+             success:success
+             failure:failure];
 }
 
 /**
@@ -131,19 +131,19 @@
  *  @param success        success block
  *  @param failure        failure block
  */
-- (void)GETWithURLString:(NSString *)urlString
-        withRefreshCache:(BOOL)beRefreshCache
-              parameters:(NSDictionary *)parameters
-                 success:(void (^)(id))success
-                 failure:(void (^)(NSString *))failure {
+- (NSURLRequest *)GETWithURLString:(NSString *)urlString
+                  withRefreshCache:(BOOL)beRefreshCache
+                        parameters:(NSDictionary *)parameters
+                           success:(void (^)(id))success
+                           failure:(void (^)(NSString *))failure {
     if (!beRefreshCache) {
         //如果不refresh，这里就是一次性请求的，且不会冲cache
-        [self GETWithURLString:urlString withCache:NO parameters:parameters success:success failure:failure];
+        return [self GETWithURLString:urlString withCache:NO parameters:parameters success:success failure:failure];
     } else {
         // refresh，清理之前的cache，然后做请求，并缓存到cache中
         [self clearCache:urlString parameters:parameters];
         // request
-        [self GETWithURLString:urlString parameters:parameters success:success failure:failure];
+        return [self GETWithURLString:urlString parameters:parameters success:success failure:failure];
     }
 }
 
@@ -155,12 +155,12 @@
  *  @param success
  *  @param failure
  */
-- (void)GET:(NSString *)urlString
- parameters:(NSDictionary *)parameters
-   hitCache:(void (^)(BOOL isHit))hitCache
-   interval:(NSTimeInterval)expirationInterval
-    success:(void (^)(id responseData))success
-    failure:(void (^)(NSString *errorString))failure {
+- (NSURLRequest *)GET:(NSString *)urlString
+           parameters:(NSDictionary *)parameters
+             hitCache:(void (^)(BOOL isHit))hitCache
+             interval:(NSTimeInterval)expirationInterval
+              success:(void (^)(id responseData))success
+              failure:(void (^)(NSString *errorString))failure {
     BOOL __block responseFromCache = YES;
     void (^successWrapper)(AFHTTPRequestOperation *operation, id responseObject) = ^(AFHTTPRequestOperation *operation, id responseObject) {
         success(responseObject);
@@ -190,6 +190,7 @@
         return cachedResponse;
     }];
     [_operationManager.operationQueue addOperation:operation];
+    return operation.request;
 }
 
 #pragma mark - Post Method

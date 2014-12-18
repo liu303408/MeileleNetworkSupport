@@ -29,10 +29,10 @@
  *  @param success    success block
  *  @param failure    failure block
  */
-- (void)GETWithURLString:(NSString *)urlString
-              parameters:(NSDictionary *)parameters
-                 success:(void (^)(id responseData))success
-                 failure:(void (^)(NSString *errorString))failure;
+- (NSURLRequest *)GETWithURLString:(NSString *)urlString
+                        parameters:(NSDictionary *)parameters
+                           success:(void (^)(id responseData))success
+                           failure:(void (^)(NSString *errorString))failure;
 
 /**
  *  Get Method --with cache
@@ -43,11 +43,11 @@
  *  @param success    success block
  *  @param failure    failure block
  */
-- (void)GETWithURLString:(NSString *)urlString
-              parameters:(NSDictionary *)parameters
-                hitCache:(void (^)(BOOL isHit))hitCache
-                 success:(void (^)(id responseData))success
-                 failure:(void (^)(NSString *errorString))failure;
+- (NSURLRequest *)GETWithURLString:(NSString *)urlString
+                        parameters:(NSDictionary *)parameters
+                          hitCache:(void (^)(BOOL isHit))hitCache
+                           success:(void (^)(id responseData))success
+                           failure:(void (^)(NSString *errorString))failure;
 
 /**
  *  Get Method --with cache and and set expiration interval
@@ -59,13 +59,13 @@
  *  @param success            success block
  *  @param failure            failure block
  */
-- (void)GETWithURLString:(NSString *)urlString
-                hitCache:(void (^)(BOOL isHit))hitCache
-                interval:(NSTimeInterval)expirationInterval
-              parameters:(NSDictionary *)parameters
-                 success:(void (^)(id responseData))success
-                 failure:(void (^)(NSString *errorString))failure;
-    
+- (NSURLRequest *)GETWithURLString:(NSString *)urlString
+                          hitCache:(void (^)(BOOL isHit))hitCache
+                          interval:(NSTimeInterval)expirationInterval
+                        parameters:(NSDictionary *)parameters
+                           success:(void (^)(id responseData))success
+                           failure:(void (^)(NSString *errorString))failure;
+
 /**
  *  Get Method -can close cache
  *
@@ -75,11 +75,11 @@
  *  @param success    success block
  *  @param failure    failure block
  */
-- (void)GETWithURLString:(NSString *)urlString
-               withCache:(BOOL)useCache
-              parameters:(NSDictionary *)parameters
-                 success:(void (^)(id responseData))success
-                 failure:(void (^)(NSString *errorString))failure;
+- (NSURLRequest *)GETWithURLString:(NSString *)urlString
+                         withCache:(BOOL)useCache
+                        parameters:(NSDictionary *)parameters
+                           success:(void (^)(id responseData))success
+                           failure:(void (^)(NSString *errorString))failure;
 
 /**
  *  Get Method -can close cache and set expiration interval
@@ -91,30 +91,30 @@
  *  @param success            success block
  *  @param failure            failure block
  */
-- (void)GETWithURLString:(NSString *)urlString
-               withCache:(BOOL)useCache
-                interval:(NSTimeInterval)expirationInterval
-              parameters:(NSDictionary *)parameters
-                 success:(void (^)(id responseData))success
-                 failure:(void (^)(NSString *errorString))failure;
+- (NSURLRequest *)GETWithURLString:(NSString *)urlString
+                         withCache:(BOOL)useCache
+                          interval:(NSTimeInterval)expirationInterval
+                        parameters:(NSDictionary *)parameters
+                           success:(void (^)(id responseData))success
+                           failure:(void (^)(NSString *errorString))failure;
 
 /**
  *  Get Method -can refresh cache
  *
  *  @param urlString      url request string
  *  @param beRefreshCache refresh cache
-    if yes, the old cache will be cleaned and the new response will be cached
-    if no, the old cache will be reserved and the request will be the one time request
-           and it'll not replace the old cache
+ if yes, the old cache will be cleaned and the new response will be cached
+ if no, the old cache will be reserved and the request will be the one time request
+ and it'll not replace the old cache
  *  @param parameters     parameters with dictionary type
  *  @param success        success block
  *  @param failure        failure block
  */
-- (void)GETWithURLString:(NSString *)urlString
-        withRefreshCache:(BOOL)beRefreshCache
-              parameters:(NSDictionary *)parameters
-                 success:(void (^)(id))success
-                 failure:(void (^)(NSString *))failure;
+- (NSURLRequest *)GETWithURLString:(NSString *)urlString
+                  withRefreshCache:(BOOL)beRefreshCache
+                        parameters:(NSDictionary *)parameters
+                           success:(void (^)(id))success
+                           failure:(void (^)(NSString *))failure;
 
 /**
  *  Post Method
