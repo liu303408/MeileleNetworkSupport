@@ -163,15 +163,19 @@
               failure:(void (^)(NSString *errorString))failure {
     BOOL __block responseFromCache = YES;
     void (^successWrapper)(AFHTTPRequestOperation *operation, id responseObject) = ^(AFHTTPRequestOperation *operation, id responseObject) {
-        success(responseObject);
+        if (success) {
+            success(responseObject);
+        }
     };
     
     void (^requestFailureBlock)(AFHTTPRequestOperation *operation, NSError *error) = ^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"ERROR: %@", error);
-        if ([error.userInfo objectForKey:NSLocalizedDescriptionKey]) {
-            failure([error.userInfo objectForKey:NSLocalizedDescriptionKey]);
-        } else if ([error.userInfo objectForKey:@"NSDebugDescription"]) {
-            failure([error.userInfo objectForKey:@"NSDebugDescription"]);
+        if (failure) {
+            if ([error.userInfo objectForKey:NSLocalizedDescriptionKey]) {
+                failure([error.userInfo objectForKey:NSLocalizedDescriptionKey]);
+            } else if ([error.userInfo objectForKey:@"NSDebugDescription"]) {
+                failure([error.userInfo objectForKey:@"NSDebugDescription"]);
+            }
         }
     };
     
