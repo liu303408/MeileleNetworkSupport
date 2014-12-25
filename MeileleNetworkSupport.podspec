@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "MeileleNetworkSupport"
-s.version          = "4.1.0"
+s.version          = “4.2.0”
 s.platform         = :ios, '6.0'
 s.license          = 'MIT'
 s.summary          = "A delightful iOS networking framework with AFNetWorking "
@@ -24,7 +24,7 @@ s.requires_arc     = true
 s.default_subspec = 'Core'
 s.subspec 'Core' do |core|
 core.source_files = 'Pod/Classes/Core/*.{h,m}','Pod/Classes/MeileleNetworkSupport.h'
-core.dependency 'AFNetworking', '~> 2.4.1'
+core.dependency 'AFNetworking', '~> 2.5.0’
 end
 
 s.subspec 'RAC' do |rac|
